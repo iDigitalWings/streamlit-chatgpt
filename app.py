@@ -63,8 +63,7 @@ with st.sidebar:
         default_index=st.session_state.index
     )
 
-
-# 从环境变量获取 API KEY
+# get api key from env
 openai_api_key = os.getenv("OPENAI_API_KEY")
 openai = OpenAI(model_name=llm)
 
