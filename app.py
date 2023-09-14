@@ -17,7 +17,6 @@ st.set_page_config(layout="wide", page_title='数翼 Streamlit Chat 示例')
 default_title = '新的对话'
 
 
-# 输出一条聊天消息
 def chat(user, message):
     with st.chat_message(user):
         print(user, ':', message)
