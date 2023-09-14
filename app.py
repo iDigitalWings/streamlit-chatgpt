@@ -12,10 +12,6 @@ from langchain import OpenAI
 from streamlit_option_menu import option_menu
 from conversations import conversations
 
-# 从环境变量获取 API KEY
-openai_api_key = os.getenv("OPENAI_API_KEY")
-openai = OpenAI()
-
 st.set_page_config(layout="wide", page_title='数翼 Streamlit Chat 示例')
 
 default_title = '新的对话'
@@ -66,6 +62,11 @@ with st.sidebar:
         titles,
         default_index=st.session_state.index
     )
+
+
+# 从环境变量获取 API KEY
+openai_api_key = os.getenv("OPENAI_API_KEY")
+openai = OpenAI(model_name=llm)
 
 st.session_state.messages = conversations[st.session_state.index]['messages']
 
